@@ -4,9 +4,59 @@
 # 프로젝트 설명
 사용자가 회원가입 후 로그인을 해서 다른 사용자를 팔로우를 하고, 팔로잉 중인 멤버의 글들을 확인하는 SNS 형태의 프로젝트입니다. k8s 환경에서 인스턴스를 어떻게 구분하는 것이 좋은지에 초점을 맞춰서 설계를 했습니다.<br/>
 
+
+
+**참고 : member-activity-svc (Season2 폐지 예정)**<br/>
+
 member-activity 서비스의 경우 season2 에서는 삭제 예정이지만, 실무에서 kafka 를 쓸때 '메시지 유실' 관점에서의 PVC/MongoDB 영속화, 'Exactly Once' 를 Off 했을때 메시지의 중복수신 체크방법 등에 대해 다루기 위해 불가피하게 시나리오 기반으로 추가한 서비스입니다. Kafka 대신 feign 기반의 통신을 할 경우 어떻게 하는 지에 대해서도 예제를 작성했습니다.<br/>
 
 개인적으로는 kubernetes 환경이 갖춰져 있다면, 웹소켓, 메시징 등의 상태없는 통신이 아닌 이상 Kafka/RabbitMQ 를 도입하기 보다는 kubernetes 기반의 스케일아웃이 용이한 환경을 통해 Feign 으로 통신을 하고, 통신실패의 경우 실시간 배치를 통해 후보정하는 것이 좋다고 생각합니다.<br/>
+
+<br/>
+
+
+
+**content-svc, timeline-svc**<br/>
+
+**content-svc**<br/>
+
+content-svc 는 쓰기 트랜잭션을 수행하는 역할을 전담합니다. 글 생성/수정/삭제, 댓글,답글 생성/수정/삭제, 좋아요,좋아요 취소 트랜잭션 작업을 전담하며, 급작스러운 트래픽 증가나 장애 발생시 읽기 작업(조회/통계)에 영향을 주지 않기 위해 별도의 서비스로 분리했습니다. content-svc 에서는 하나의 트랜잭션에서 MySQL, MongoDB 에 저장/수정/삭제(or소프트삭제)를 수행합니다. MySQL 은 트랜잭션과 데이터의 조인, 정규화를 위한 저장소로 사용했으며, MongoDB 에는 MySQL 데이터의 pk 들을 보관하는 각각의 개별 인덱스를 보관하고 있습니다. MySQL, MongoDB 의 데이터 저장이 하나의 트랜잭션으로 이뤄지기에 데이터가 불일치하는 현상이 없음을 보장가능합니다. <br/>
+
+<br/>
+
+
+
+**timeline-svc**<br/>
+
+좋아요 갯수, 댓글 갯수 등을 1건의 글에 대해서도 조회할 경우가 있지만, 피드 목록을 들고올때 각 글에 대한 좋아요 갯수, 댓글 갯수를 통계를 내야 할때가 있습니다. 이 경우 조회를 위해 사용하는 MongoDB 의 `posts`,`comments` 인덱스를 사용해 통계를 냅니다.<br/>
+
+timeline-svc 에서는 단순히 MongoDB 만을 사용하지는 않습니다. 지금 가장 인기있는글, 댓글 많은 글, 팔로잉 멤버들의 최근 소식 등을 조회하는 SQL 이나 Querydsl 이 필요한 케이스의 경우 timeline-svc 를 사용하도록 했습니다.<br/>
+
+
+
+**search-svc**<br/>
+
+글, 댓글/답글의 본문 검색을 위한 서비스입니다. 형태소 분석이 용이한 MongoDB를 사용했으며, ElasticSearch 등을 사용할수도 있었겠지만, 개인 프로젝트 특성상 비용을 절감해야 했기에 MongoDB 를 사용했습니다.<br/>
+
+<br/>
+
+
+
+**image-svc**<br/>
+
+S3 등을 사용할수도 있겠지만, 개인 프로젝트 특성상 비용지출을 최소한도로 해야했기에 PVC 기반의 deployment 기반으로 꾸렸습니다.<br/>
+
+<br/>
+
+
+
+**member-svc**<br/>
+
+- (WIP) 문서 정리 예정
+
+
+
+
 
 
 ## 로그인 페이지
@@ -88,7 +138,18 @@ follow, following 목록을 확인할 수 있는 페이지입니다.
   - https://github.com/alpha3002025/dailyfeed-infrastructure : kind,mysql,kafka,redis,configmap 등을 설치 및 관리
   - https://github.com/alpha3002025/dailyfeed-app-helm : 애플리케이션의 helm 및 설치 스크립트를 관리
 
-- 
+
+
+
+
+Frontend
+
+- https://github.com/alpha3002025/dailyfeed-frontend-svc
+  - Next.js App Router 기반의 애플리케이션이며, Frontend 학습을 위해 2주 이상을 학습했었지만, 막상 프로젝트를 하다보니 시간관리를 위해 AI(Claude Code)를 이용해 개발하게 되었습니다.
+
+
+
+
 
 계정 서비스
 
@@ -98,6 +159,10 @@ follow, following 목록을 확인할 수 있는 페이지입니다.
   - https://github.com/alpha3002025/dailyfeed-feign-support
   - https://github.com/alpha3002025/dailyfeed-redis-support
 
+
+
+
+
 콘텐츠 서비스
 
 - https://github.com/alpha3002025/dailyfeed-content-svc
@@ -106,6 +171,8 @@ follow, following 목록을 확인할 수 있는 페이지입니다.
   - https://github.com/alpha3002025/dailyfeed-feign-support
   - https://github.com/alpha3002025/dailyfeed-redis-support
   - https://github.com/alpha3002025/dailyfeed-kafka-support
+
+
 
 
 
@@ -120,6 +187,9 @@ timeline 서비스 (피드, 인기있는글들, 댓글많은 글, 댓글수 카�
   - https://github.com/alpha3002025/dailyfeed-kafka-support
 
 
+
+
+
 이미지 (e.g. 썸네일) 서비스
 
 - https://github.com/alpha3002025/dailyfeed-image-svc
@@ -128,12 +198,18 @@ timeline 서비스 (피드, 인기있는글들, 댓글많은 글, 댓글수 카�
   - https://github.com/alpha3002025/dailyfeed-feign-support
 
 
+
+
+
 검색(e.g. 본문검색, Full Text Search) 서비스
 
 - https://github.com/alpha3002025/dailyfeed-search-svc
   - https://github.com/alpha3002025/dailyfeed-code
   - https://github.com/alpha3002025/dailyfeed-search
   - https://github.com/alpha3002025/dailyfeed-feign-support
+
+
+
 
 
 멤버 활동 기록 서비스
@@ -147,7 +223,11 @@ timeline 서비스 (피드, 인기있는글들, 댓글많은 글, 댓글수 카�
   - https://github.com/alpha3002025/dailyfeed-kafka-support
 
 
+
+
+
 배치 서비스
+
 - https://github.com/alpha3002025/dailyfeed-batch-svc
   - https://github.com/alpha3002025/dailyfeed-code
   - https://github.com/alpha3002025/dailyfeed-batch
