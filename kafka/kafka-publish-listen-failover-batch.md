@@ -1,4 +1,5 @@
 # Kafka - publish/listen 시의 에러처리, Failover 방식
+> 문서 정리 중입니다. 차주 수요일 (10월 마지막 주) 이내로 정리를 완료할 예정입니다.
 
 # 요약
 Publish/Listen 시의 에러 처리와 Fail over 를 위한 배치는 다음과 같이 수행합니다. 
@@ -33,6 +34,10 @@ batch
 - pvc 로그 분해
   - 죄송합니다. 취업준비 때문에 바빠서 이것 까지는 못하겠습니다 하하하. (저 코딩테스트도 준비하고 이력서도 준비해야해요.)
 
+<br/>
+
+# 설명
+![](./img/communication.png)
 <br/>
 
 # Message Key 형식
