@@ -8,15 +8,14 @@
 
 **참고 : member-activity-svc (Season2 폐지 예정)**<br/>
 
-`member-activity-svc` 의 경우 이번 프로젝트에 필요하지는 않지만 실무에서 kafka 를 쓸때 '메시지 유실' 관점에서의 PVC/MongoDB 영속화, 'Exactly Once' 를 Off 했을때 메시지의 중복수신 체크방법 등에 대해 다루기 위해 불가피하게 시나리오 기반으로 추가한 서비스입니다. 카프카 사용시 publish, listen 시 애플리케이션 레벨에서의 중복메시지 체크, 전송실패 처리 에 대한 주제가 자주 언급되고 중요하다고 여겨지기에 이번 프로젝트에 어느 정도의 역량이나 설계관점이 있는지를 소개하기 위해 소기능으로 추가했고, Season 2 에서 삭제 예정입니다.<br/>
+`member-activity-svc` 의 경우 이번 프로젝트에 필요하지는 않지만 실무에서 kafka 를 쓸때 '메시지 유실' 관점에서의 PVC/MongoDB 영속화, 'Exactly Once' 를 Off 했을때 메시지의 중복수신 체크방법 등에 대해 다루기 위해 불가피하게 시나리오 기반으로 추가한 서비스입니다. 카프카 사용시 publish, listen 시 애플리케이션 레벨에서의 중복메시지 체크, 전송실패 처리 에 대한 주제가 자주 언급되고 중요하다고 여겨지기에 이번 프로젝트에 어느 정도의 역량이나 설계관점이 있는지를 소개하기 위해 소기능으로 추가했고, Season 2 에서 삭제하고 Feign 기반으로 전환할 예정입니다.<br/>
 
  Kafka 대신 feign 기반의 통신을 할 경우 어떻게 하는 지에 대해서도 예제를 작성했습니다.<br/>
 
-개인적으로는 kubernetes 환경이 갖춰져 있다면, 웹소켓, 메시징 등의 상태없는 통신이 아닌 이상 Kafka/RabbitMQ 를 도입하기 보다는 kubernetes 기반의 스케일아웃이 용이한 환경을 통해 Feign 으로 통신을 하고, 통신실패의 경우 실시간 배치를 통해 후보정하는 것이 좋다고 생각합니다.<br/>
+개인적으로는 kubernetes 환경이 갖춰져 있다면, 웹소켓, 메시징 등의 상태없는 통신이 아닌 이상 Kafka/RabbitMQ 를 도입하기 보다는 kubernetes 기반의 스케일아웃이 용이한 환경을 통해 Feign 으로 통신을 하고, 통신실패의 경우 실시간 배치를 통해 후보정하는 것이 좋다고 생각합니다. Feign 을 사용할 경우 카프카에 비해 `STATUS_CODE` 를 더 다양하게 활용할수 있고, Rate Limiting, Circuit Breaker 도입이 가능하기 때문에, MSA 간 통신시에는 카프카 보다는 Feign 을 선호하는 편입니다. 카프카는 Publish 의 에러체크, Listen 시의 에러체크가 모두 필요하기에 카프카 통신 내에 트랜잭션이 섞일수록 점점 운영이 힘들어지는 것 같습니다.<br/>
 
-
-
-# 
+member-activity-svc 도입시 카프카 관련 개념을 적용한 글들은 다음 글들에서 확인 가능합니다.
+- [kafka/kafka-publish-listen-failover-batch](./kafka/kafka-publish-listen-failover-batch.md)
 
 
 
