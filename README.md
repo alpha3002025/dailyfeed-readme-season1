@@ -16,7 +16,10 @@
 ![](./img/readme/documentation/login.png)
 <br/>
 
+또는 아래 링크를 이용하시면 됩니다.
+- https://github.com/alpha3002025/dailyfeed-readme-season1/blob/main/dailyfeed-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%A4%EB%AA%85%EB%AC%B8%EC%84%9C-2025.pdf
 
+<br/>
 
 ## My follow's news
 
