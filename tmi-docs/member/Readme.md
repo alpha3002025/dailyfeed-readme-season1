@@ -21,18 +21,22 @@ dailyfeed-member-svc 를 설명하기에 앞서 먼저 주요하게 사용한 �
 <br/>
 
 ## JWT 유효성 체크 : AOP(x) → ArgumentResolver(o)
-AOP(x) → ArgumentResolver(o)
+**AOP(x) → ArgumentResolver(o)**<br/>
+
 요청 헤더의 JWT 인증 체크를 수행하는 로직은 모두 ArgumentResolver 를 사용했습니다.
 인증 체크의 경우 흔히 AOP 를 이용해 JWT 를 분해하고 검사하거나 유효한 사용자인지를 조회하는 것이 보편적인 선택이 될수도 있을 것 같습니다.
-하지만 dailyfeed-member-svc 의 경우 **ArgumentResolver를 이용한 인증방식**을 선택했습니다.
+하지만 dailyfeed-member-svc 의 경우 **ArgumentResolver를 이용한 인증방식**을 선택했습니다.<br/>
+<br/>
 
 AOP 를 사용하지 않은 이유
 - AOP 의 경우 Controller 외부에서도 사용될 수 있다는 점을 감안해야하고 
 - 지나친 AOP 의존은 공통로직의 비대화 + 결합도 증가 를 불러온다고 판단
+<br/>
 
 ArgumentResolver 를 사용한 이유
 - Web 을 통해 전달받은 파라미터를 통해 검증한다는 목적에 정확하게 부합해서 ArgumentResolver 를 선택했습니다.
 - Web 요청 외에는 사용되지 않기에 오용될 소지가 적다는 점 역시 선택에 한몫 했습니다.
+<br/>
 
 주요 ArgumentResolver
 - MemberProfileSummaryArgumentResolver 
