@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tmi-docs/member/3. ArgumentResolver.md",
+                "file": "tmi-docs/member/0. JWT 관리.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3. ArgumentResolver"
+              "title": "0. JWT 관리"
             }
           }
         ],
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "401 UnAu",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmi-docs/member/3. ArgumentResolver.md",
+                "file": "tmi-docs/member/0. JWT 관리.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 3. ArgumentResolver"
+              "title": "Outline of 0. JWT 관리"
             }
           }
         ],
@@ -201,8 +201,14 @@
   "active": "742ff8fa2cca260d",
   "lastOpenFiles": [
     "tmi-docs/member/2. logout 그리고 Blacklist.md",
-    "tmi-docs/member/1. 인증 흐름.md",
+    "tmi-docs/member/img/authentication/multiple-instance.png",
+    "tmi-docs/member/img/authentication/single-instance.png",
     "tmi-docs/member/0. JWT 관리.md",
+    "tmi-docs/member/1. 인증 흐름.md",
+    "README.md",
+    "tmi-docs/member/img/authentication/login.png.sb-17d6399b-F7zUa7",
+    "tmi-docs/member/img/authentication/logout.png",
+    "tmi-docs/member/3. ArgumentResolver.md",
     "tmi-docs/member/img/authentication/refresh-when-accesstoken-expired-detail.png",
     "tmi-docs/member/Readme.md",
     "tmi-docs/member/img/readme/overview.png",
@@ -210,7 +216,6 @@
     "tmi-docs/member/img/authentication/refresh-when-accesstoken-expired.png",
     "tmi-docs/member/img/authentication/login.png",
     "tmi-docs/member/img/authentication",
-    "tmi-docs/member/3. ArgumentResolver.md",
     "tmi-docs/Readme.md",
     "tmi-docs/member/img/readme",
     "tmi-docs/member/img"
