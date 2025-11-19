@@ -13,20 +13,6 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tmi-docs/member/Readme.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Readme"
-            }
-          },
-          {
-            "id": "742ff8fa2cca260d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
                 "file": "tmi-docs/member/0. JWT 관리.md",
                 "mode": "source",
                 "source": false
@@ -35,8 +21,7 @@
               "title": "0. JWT 관리"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -198,19 +183,19 @@
       "bases:Create new base": false
     }
   },
-  "active": "742ff8fa2cca260d",
+  "active": "00f7736f87512cb7",
   "lastOpenFiles": [
     "tmi-docs/member/2. logout 그리고 Blacklist.md",
+    "tmi-docs/member/3. ArgumentResolver.md",
+    "tmi-docs/member/1. 인증 흐름.md",
+    "tmi-docs/member/Readme.md",
+    "tmi-docs/member/0. JWT 관리.md",
     "tmi-docs/member/img/authentication/multiple-instance.png",
     "tmi-docs/member/img/authentication/single-instance.png",
-    "tmi-docs/member/0. JWT 관리.md",
-    "tmi-docs/member/1. 인증 흐름.md",
     "README.md",
     "tmi-docs/member/img/authentication/login.png.sb-17d6399b-F7zUa7",
     "tmi-docs/member/img/authentication/logout.png",
-    "tmi-docs/member/3. ArgumentResolver.md",
     "tmi-docs/member/img/authentication/refresh-when-accesstoken-expired-detail.png",
-    "tmi-docs/member/Readme.md",
     "tmi-docs/member/img/readme/overview.png",
     "tmi-docs/member/img/authentication/relogin-when-refreshtoken-expired.png",
     "tmi-docs/member/img/authentication/refresh-when-accesstoken-expired.png",
