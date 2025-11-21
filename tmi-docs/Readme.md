@@ -15,6 +15,11 @@
 - [3\. 서비스간 통신 시 인증 유효성 체크](./member/3.%20서비스간%20통신%20시%20인증%20유효성%20체크.md)
 - [3\. ArgumentResolver 기반 인증 유효성 체크](./member/3.%20ArgumentResolver.md)
 
+[system-design/](./system-design/)
+- [Readme](./system-design/Readme.md)
+- [0\. 도메인 경계 정의 (스케일아웃 성격별 분류)](./system-design/0.%20도메인%20경계%20정의%20(스케일아웃%20성격별%20분류).md)
+- [1\. 전체 구성도](./system-design/1.%20전체%20구성도.md)
+
 <br/>
 
 > 현재 프로젝트 명은 'dailyfeed' 이고 '일상공유피드' 개념이지만, season2 에서는 'dailyfeed'라는 이름을 바꿔서 스포츠 관련 피드 시스템을 만들어볼 예정입니다.
