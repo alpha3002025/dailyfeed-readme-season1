@@ -1,9 +1,14 @@
 # 프로젝트 리뷰 - 지원되는 기능들
+> obsidian (https://obsidian.md) 를 통해 현재 리포지터리 디렉터리를 열어서 확인하시면 조금 더 가독성 높게 내용을 파악하실수 있습니다.<br/>
+
+<br/>
+
 
 # 서비스 간 통신시 https 지원
 >`dailyfeed` 프로젝트에서는 서비스 간 통신시 https 를 기본으로 지원합니다.<br/>
 
 istio 에 의해 서비스 메시가 관리되는 환경에서는 다음과 같이 `istio proxy` 라고 부르는 container 가 각각의 Pod 에 주입됩니다. 
+
 ![](./img/supported-features/istio-proxy-container.png)
 <br/>
 
@@ -90,6 +95,7 @@ kuberntes 의 `resources.requests`, `resources.limit` 에 대해 알고 계신�
 
 # Istio
 Istio 에서는 '서비스 메시 (Service Mesh)'라고 부르는 개념이 있습니다.
+
 ![](./img/supported-features/service-mesh.png)
 
 `Mesh` 는 영어 단어 그 자체로는 `그물망`, `철망` 이라는 의미를 가집니다. 서비스 메시(Service Mesh) 라는 것은 Service 를 감싸고 있는 '그물'을 위미합니다. 즉, `Service Mesh` 라는 용어의 의미는 `Kubernetes` 내의 서비스들의 네트워크 들을 감싸는 그물같은 `Network 레벨의 그물(Mesh)`을 의미합니다.<br/>
