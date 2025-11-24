@@ -203,3 +203,19 @@ retryer 를 사용하면 다음의 장점들이 있습니다.
 <br/>
 
 
+# Create/Update/Delete 트래픽과 Read 트래픽의 스케일아웃 그룹 분리
+
+Create/Update/Delete 트랜잭션을 수행하는 트래픽 그룹과 Read 트래픽을 수행하는 트래픽 그룹이 서로 다른 그룹으로 스케일 아웃 될수 있도록 서비스를 구성했습니다.
+
+ **Create/Update/Delete 트랜잭션을 수행하는 트래픽 그룹**<br/>
+ ![](./img/supported-features/scale-out-group-cud.png)
+<br/>
+
+**Read 트랜잭션을 수행하는 트래픽 그룹**<br/>
+![](./img/supported-features/scale-out-group-read.png)
+<br/>
+
+이렇게 하면, 슬로우 쿼리 등이 발생하는 Read 트랜잭션 그룹의 부하가 Create/Update/Delete 트랜잭션 그룹에 영향을 주지 않고, 쓰기 트랜잭션에서 발생하는 부하(좋아요 급증, 댓글 작성 폭주 등)가 Read 트랜잭션 그룹과는 별개로 발생하기에 각각의 성격에 따라 다르게 용도에 따라 대응할 수 있다는 유연성을 가지게 됩니다.<br/>
+<br/>
+
+
