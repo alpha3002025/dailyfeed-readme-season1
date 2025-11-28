@@ -5,7 +5,7 @@
 - [2. Kafka 설정](./2.kafka-설정.md)
 - [3. 중복 메시지 체크 방식](./3.중복-메시지-체크-방식.md)
 - [4. 날짜 별 토픽 운영](./4.날짜-별-토픽-운영.md)
-- [5. publish-type 으로 kafka,feign 통신방식 선택](./img/5.publish-type-으로-kafka,feign-통신방식-선택.md)
+- [5. publish-type 으로 kafka,feign 통신방식 선택](./5.publish-type-으로-kafka,feign-통신방식-선택.md)
 
 <br/>
 <br/>
