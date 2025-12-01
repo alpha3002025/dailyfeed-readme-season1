@@ -2,10 +2,11 @@
 # 목차
 - [0. kafka 사용 케이스 소개](./0.introduce-problem.md)
 - [1. 카프카 통신 실패 시 처리 대책](./1.process-kafka-failure.md)
-- [2. Kafka 설정](./2.kafka-설정.md)
+- [2. Producer Acks 설정, Consumer Offset Commit 설정](2.producer-acks-설정과-consumer-offset-commit-설정.md)
 - [3. 중복 메시지 체크 방식](./3.중복-메시지-체크-방식.md)
 - [4. 날짜 별 토픽 운영](./4.날짜-별-토픽-운영.md)
 - [5. publish-type 으로 kafka,feign 통신방식 선택](./5.publish-type-으로-kafka,feign-통신방식-선택.md)
+- [`dailyfeed-kafka-support` 모듈 및 kafka 설정](./6.kafka-support-모듈.md)
 
 <br/>
 <br/>
