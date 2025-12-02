@@ -132,7 +132,7 @@ follow, following 목록을 확인할 수 있는 페이지입니다.
 <br/>
 
 **timeline 서비스**
-> 피드, 인기있는글들, 댓글많은 글, 댓글수 카운팅 등, 조회에 관련된 기능을 담당)
+> 피드, 인기있는글들, 댓글많은 글, 댓글수 카운팅 등, 조회에 관련된 기능을 담당
 
 - Project: https://github.com/alpha3002025/dailyfeed-timeline-svc
   - module: https://github.com/alpha3002025/dailyfeed-code
