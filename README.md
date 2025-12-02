@@ -108,13 +108,13 @@ follow, following 목록을 확인할 수 있는 페이지입니다.
   - module: https://github.com/alpha3002025/dailyfeed-app-helm : 애플리케이션의 helm 및 설치 스크립트를 관리
 <br/>
 
-Frontend
+**Frontend**
 > Next.js App Router 기반의 애플리케이션이며, Frontend 학습을 위해 2주 이상을 학습했었지만, 막상 프로젝트를 하다보니 시간관리를 위해 95% 이상의 코드를 AI(Claude Code)를 이용해 개발하게 되었습니다.<br/>
 
 - Project: https://github.com/alpha3002025/dailyfeed-frontend-svc
 <br/>
 
-계정 서비스
+**계정 서비스**
 - Project: https://github.com/alpha3002025/dailyfeed-member-svc
   - module: https://github.com/alpha3002025/dailyfeed-code
   - module: https://github.com/alpha3002025/dailyfeed-member
@@ -122,7 +122,7 @@ Frontend
   - module: https://github.com/alpha3002025/dailyfeed-redis-support
 <br/>
 
-콘텐츠 서비스
+**콘텐츠 서비스**
 - Project: https://github.com/alpha3002025/dailyfeed-content-svc
   - module: https://github.com/alpha3002025/dailyfeed-code
   - module: https://github.com/alpha3002025/dailyfeed-content
@@ -131,7 +131,7 @@ Frontend
   - module: https://github.com/alpha3002025/dailyfeed-kafka-support
 <br/>
 
-timeline 서비스
+**timeline 서비스**
 > 피드, 인기있는글들, 댓글많은 글, 댓글수 카운팅 등, 조회에 관련된 기능을 담당)
 
 - Project: https://github.com/alpha3002025/dailyfeed-timeline-svc
@@ -143,7 +143,7 @@ timeline 서비스
   - module: https://github.com/alpha3002025/dailyfeed-kafka-support
 <br/>
 
-image 서비스
+**image 서비스**
 > 서비스 (e.g. 썸네일)
 
 - Project: https://github.com/alpha3002025/dailyfeed-image-svc
@@ -152,7 +152,7 @@ image 서비스
   - module: https://github.com/alpha3002025/dailyfeed-feign-support
 <br/>
 
-검색 서비스
+**검색 서비스**
 > (e.g. 본문검색, Full Text Search)
 
 - Project: https://github.com/alpha3002025/dailyfeed-search-svc
@@ -161,7 +161,7 @@ image 서비스
   - module: https://github.com/alpha3002025/dailyfeed-feign-support
 <br/>
 
-멤버 활동 기록 서비스
+**멤버 활동 기록 서비스**
 - Project: https://github.com/alpha3002025/dailyfeed-activity-svc
   - module: https://github.com/alpha3002025/dailyfeed-code
   - module: https://github.com/alpha3002025/dailyfeed-activity
@@ -171,7 +171,7 @@ image 서비스
   - module: https://github.com/alpha3002025/dailyfeed-kafka-support
 <br/>
 
-배치 서비스
+**배치 서비스**
 - Project: https://github.com/alpha3002025/dailyfeed-batch-svc
   - module: https://github.com/alpha3002025/dailyfeed-code
   - module: https://github.com/alpha3002025/dailyfeed-batch
