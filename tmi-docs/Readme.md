@@ -35,6 +35,11 @@
 - [6.`dailyfeed-kafka-support` 모듈 및 kafka 설정](./kafka/6.kafka-support-모듈.md)
 <br/>
 
+[installer/](./installer/)
+- [docker image 빌드를 github workflow 로 정의](./installer/0.docker-image-build-with-github.md)
+- [dailyfeed-installer,dailyfeed-infrastructure,dailyfeed-app-helm 설명](./installer/1.dailyfeed-installer,dailyfeed-infrastructure,dailyfeed-app-helm.md)
+<br/>
+
 [project-review/](./project-review/)
 - [Readme](./project-review/Readme.md)
 - [Supported-features](./project-review/Supported-features.md)
