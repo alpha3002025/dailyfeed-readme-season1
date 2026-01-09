@@ -17,7 +17,7 @@
 
 # 프로젝트 문서
 pdf 로 정리한 문서는 다음과 같습니다.<br/>
-- [dailyfeed 프로젝트 설명문서.pdf (다운로드 페이지로 이동)](./dailyfeed-프로젝트-설명문서-2025.pdf) 
+- [dailyfeed 프로젝트 설명문서.pdf (다운로드 페이지로 이동)](./dailyfeed-project-설명문서.pdf) 
 - https://github.com/alpha3002025/dailyfeed-readme-season1/blob/main/dailyfeed-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%A4%EB%AA%85%EB%AC%B8%EC%84%9C-2025.pdf
 <br/>
 <br/>
@@ -107,7 +107,7 @@ follow, following 목록을 확인할 수 있는 페이지입니다.
 - Project: https://github.com/alpha3002025/dailyfeed-installer
   - module: https://github.com/alpha3002025/dailyfeed-infrastructure : kind,mysql,kafka,redis,configmap 등을 설치 및 관리
   - module: https://github.com/alpha3002025/dailyfeed-app-helm : 애플리케이션의 helm 및 설치 스크립트를 관리
-<br/>
+  <br/>
 
 **Frontend**
 > Next.js App Router 기반의 애플리케이션이며, Frontend 학습을 위해 2주 이상을 학습했었지만, 막상 프로젝트를 하다보니 시간관리를 위해 95% 이상의 코드를 AI(Claude Code)를 이용해 개발하게 되었습니다.<br/>
@@ -121,7 +121,7 @@ follow, following 목록을 확인할 수 있는 페이지입니다.
   - module: https://github.com/alpha3002025/dailyfeed-member
   - module: https://github.com/alpha3002025/dailyfeed-feign-support
   - module: https://github.com/alpha3002025/dailyfeed-redis-support
-<br/>
+  <br/>
 
 **콘텐츠 서비스**
 - Project: https://github.com/alpha3002025/dailyfeed-content-svc
@@ -130,7 +130,7 @@ follow, following 목록을 확인할 수 있는 페이지입니다.
   - module: https://github.com/alpha3002025/dailyfeed-feign-support
   - module: https://github.com/alpha3002025/dailyfeed-redis-support
   - module: https://github.com/alpha3002025/dailyfeed-kafka-support
-<br/>
+  <br/>
 
 **timeline 서비스**
 > 피드, 인기있는글들, 댓글많은 글, 댓글수 카운팅 등, 조회에 관련된 기능을 담당
@@ -142,7 +142,7 @@ follow, following 목록을 확인할 수 있는 페이지입니다.
   - module: https://github.com/alpha3002025/dailyfeed-feign-support
   - module: https://github.com/alpha3002025/dailyfeed-redis-support
   - module: https://github.com/alpha3002025/dailyfeed-kafka-support
-<br/>
+  <br/>
 
 **image 서비스**
 > 서비스 (e.g. 썸네일)
@@ -151,7 +151,7 @@ follow, following 목록을 확인할 수 있는 페이지입니다.
   - module: https://github.com/alpha3002025/dailyfeed-code
   - module: https://github.com/alpha3002025/dailyfeed-image
   - module: https://github.com/alpha3002025/dailyfeed-feign-support
-<br/>
+  <br/>
 
 **검색 서비스**
 > (e.g. 본문검색, Full Text Search)
@@ -160,7 +160,7 @@ follow, following 목록을 확인할 수 있는 페이지입니다.
   - module: https://github.com/alpha3002025/dailyfeed-code
   - module: https://github.com/alpha3002025/dailyfeed-search
   - module: https://github.com/alpha3002025/dailyfeed-feign-support
-<br/>
+  <br/>
 
 **멤버 활동 기록 서비스**
 - Project: https://github.com/alpha3002025/dailyfeed-activity-svc
@@ -170,7 +170,7 @@ follow, following 목록을 확인할 수 있는 페이지입니다.
   - module: https://github.com/alpha3002025/dailyfeed-pvc-support
   - module: https://github.com/alpha3002025/dailyfeed-redis-support
   - module: https://github.com/alpha3002025/dailyfeed-kafka-support
-<br/>
+  <br/>
 
 **배치 서비스**
 - Project: https://github.com/alpha3002025/dailyfeed-batch-svc
