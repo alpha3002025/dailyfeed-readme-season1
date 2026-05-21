@@ -1,7 +1,7 @@
 고객사에서 발송 시에 다음 스펙에 따라 429 코드를 리턴할 수 있음 또한 명시합니다.
 - Response Code : 429
 - Status : Too Many Request
-- 발생원인 : 1000/1s 의 Quota 를 넘어섰을 경우
+- 발생원인 : 3000/1s 의 Quota 를 넘어섰을 경우
 
 <br/>
 
